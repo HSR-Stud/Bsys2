@@ -1,0 +1,39 @@
+\section{Virtueller Speicher}
+
+Jeder Prozess hat scheinbar seinen Adressraum für sich alleine zur Verfügung
+(teilt ihn nur mit dem Betriebssystem).
+
+\subsection{Segmentbasierte Adressumsetzung}
+
+Jede Region der Prozessadressraumverwaltung wird in Segmente aufgeteilt. Pro
+Segment wird eine gemeinsame Umsetzungsregel definiert.
+
+\textbf{Abbildungsfunktion:} $A_P = A_L + A_{ik}$
+
+\begin{description}
+	\item[$A_P$] Speicheradresse (physische Adresse)
+	\item[$A_L$] Programmadresse (logische bzw. virtuelle Adresse)
+	\item[$A_{ik}$] Segmentstartadresse
+	\item[$i$] Prozessnummer
+	\item[$k$] Segmentnummer
+\end{description}
+
+\subsection{Seitenbasierte Adressumsetzung}
+
+Unterteile Hauptspeicher in Reihe gleich grosser Standardblöcke (=Seiten).
+Reserviere für Regionen eines Prozesses eine ausreichende Anzahl Seiten.
+
+\textbf{Abbildungsfunktion:} $A_P = A_L + v_{ij} \cdot S$
+
+\begin{description}
+	\item[$A_P$] Speicheradresse (physische Adresse)
+	\item[$A_L$] Programmadresse (logische bzw. virtuelle Adresse)
+	\item[$S$] Seitengrösse (von CPU-Typ abhängig)
+	\item[$v$] Verschiebungsfaktor
+	\item[$i$] Prozessnummer
+	\item[$j$] Seitennummer
+\end{description}
+
+\subsection{Segment- und Seitenbasierte Adressumsetzung}
+
+TODO
